@@ -1,0 +1,2659 @@
+
+/* ==================================================
+   1. ОБЩИЕ СТИЛИ САЙТА
+   Шрифты, отступы, контейнеры и кнопки
+   ================================================== */
+
+/* Подключение жирного шрифта */
+@font-face {
+    font-family: 'TT Firs Neue';
+    src: url('./fonts/TTFirsNeue-Bold.ttf');
+    font-weight: 700;
+}
+
+/* Подключение обычного шрифта */
+@font-face {
+    font-family: 'TT Firs Neue';
+    src: url('./fonts/TTFirsNeue-Regular.ttf');
+    font-weight: 400;
+}
+
+/* Сброс стандартных отступов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Основные настройки страницы */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #202020;
+}
+
+/* Основной контейнер */
+.container {
+    width: 1290px;
+    margin: 0 auto;
+}
+
+/* Общие настройки заголовков */
+h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Общие настройки кнопок */
+.btn {
+    background-color: #FF6E30;
+    color: white;
+    border: none;
+    padding: 15px 22px;
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* Цвет кнопки при наведении */
+.btn:hover {
+    background-color: #E65A1F;
+}
+
+
+/* ==================================================
+   2. ШАПКА САЙТА
+   Логотип, навигационное меню и поиск
+   ================================================== */
+
+/* Вся шапка */
+.header {
+    height: 80px;
+    background-color: #202020;
+    display: flex;
+    align-items: center;
+}
+
+/* Расположение элементов шапки */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Список пунктов меню */
+.menu {
+    display: flex;
+    gap: 79px;
+    list-style: none;
+}
+
+/* Текст ссылок меню */
+.menu a {
+    font-family: 'TT Firs Neue', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0;
+
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Цвет меню при наведении */
+.menu a:hover {
+    color: #FF6E30;
+}
+
+
+/* ==================================================
+   3. ПЕРВЫЙ РАЗДЕЛ — МАСТЕР-КЛАСС И ФОТОГРАФИИ
+   Большая фотография слева, три фотографии справа
+   ================================================== */
+
+/* Внешние отступы раздела */
+.intro {
+    margin: 40px 0 65px;
+}
+
+/* Две колонки с фотографиями */
+.intro-grid {
+    display: grid;
+    grid-template-columns: 630px 630px;
+    gap: 30px;
+}
+
+/* Большая фотография слева */
+.intro-card {
+    width: 630px;
+    height: 630px;
+    padding: 30px;
+
+    background-image: url('images/intro1.jpg');
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    position: relative;
+}
+
+/* Чёрная плашка "#мастер-класс" */
+.tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    width: 123px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #202020;
+    color: white;
+    font-size: 14px;
+}
+
+/* Весь текст на большой фотографии */
+.intro-text {
+    color: white;
+}
+
+/* Надпись "Мастер-класс от Игоря Робова" */
+.intro-text p {
+    font-size: 16px;
+    line-height: 16px;
+    margin-bottom: 5px;
+}
+
+/* Заголовок "Неоновый фотосет 2.0" */
+.intro-text h1 {
+    font-family: 'TT Firs Neue', sans-serif;
+    font-size: 36px;
+    line-height: 104%;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* Кнопка "Узнать больше" */
+.intro-text .btn {
+    width: 159px;
+    height: 50px;
+    padding: 15px 22px;
+    font-size: 16px;
+}
+
+
+/* --------------------------------------------------
+   3.1. ПРАВАЯ ГАЛЕРЕЯ ФОТОГРАФИЙ
+   -------------------------------------------------- */
+
+/* Сетка правой галереи */
+.intro-gallery {
+    width: 630px;
+    height: 630px;
+
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-template-rows: 25px 300px 257px;
+
+    column-gap: 30px;
+    row-gap: 24px;
+}
+
+/* Заголовок "Работы участников предыдущего мастер-класса" */
+.intro-gallery h2 {
+    font-family: 'TT Firs Neue', sans-serif;
+    grid-column: 1 / 3;
+
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 104%;
+
+    margin: 0;
+    padding-left: 0;
+    white-space: nowrap;
+}
+
+/* Общие настройки фотографий */
+.intro-gallery img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Верхняя большая фотография */
+.intro-gallery .img-main {
+    grid-column: 1 / 3;
+    width: 630px;
+    height: 300px;
+}
+
+/* Две нижние фотографии */
+.intro-gallery img:not(.img-main) {
+    width: 300px;
+    height: 257px;
+}
+
+
+/* ==================================================
+   4. ВТОРОЙ РАЗДЕЛ — О СТУДИИ
+   Описание слева, фотоаппарат и подписка справа
+   ================================================== */
+
+/* Фон и размеры раздела */
+.about {
+    height: 500px;
+    background-color: #202020;
+    color: white;
+    padding: 30px 0;
+}
+
+/* Заголовок "О студии" */
+.about-title {
+    font-family: 'TT Firs Neue', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 100%;
+    margin-bottom: 12px;
+}
+
+/* Две колонки раздела */
+.about-grid {
+    display: grid;
+    grid-template-columns: 630px 630px;
+    gap: 30px;
+}
+
+/* Большой текст о студии слева */
+.about-text p {
+    width: 630px;
+    color: #CACACA;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+/* Правая колонка */
+.about-right {
+    margin-top: -3px;
+}
+
+/* Фотография фотоаппарата */
+.about-right img {
+    display: block;
+    width: 630px;
+    height: 255px;
+    object-fit: cover;
+    margin-bottom: 25px;
+}
+
+/* Заголовок "Подписаться на рассылку" */
+.about-right h3 {
+    font-family: 'TT Firs Neue', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 22px;
+    margin-bottom: 20px;
+}
+
+
+/* --------------------------------------------------
+   4.1. ФОРМА ПОДПИСКИ
+   -------------------------------------------------- */
+
+/* Расположение поля Email и кнопки */
+.form {
+    display: flex;
+    gap: 30px;
+    width: 630px;
+}
+
+/* Поле Email */
+.form input {
+    width: 474px;
+    height: 50px;
+    border: none;
+    background-color: #4A4A4A;
+    padding: 15px 23px;
+    color: white;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+/* Цвет подсказки Email */
+.form input::placeholder {
+    color: #CACACA;
+}
+
+/* Кнопка "Отправить" */
+.form .btn {
+    width: 126px;
+    height: 50px;
+    padding: 15px 22px;
+    background-color: #FF6E30;
+}
+
+/* Кнопка при наведении */
+.form .btn:hover {
+    background-color: #E65A1F;
+}
+
+
+/* ==================================================
+   5. ТРЕТИЙ РАЗДЕЛ — НАШИ ПРОЕКТЫ
+   Сетка из семи фотографий с описаниями
+   ================================================== */
+
+/* Отступы всего раздела */
+.projects {
+    padding: 68px 0;
+}
+
+/* Заголовок "Наши проекты" */
+.projects h2 {
+    font-family: 'TT Firs Neue', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 100%;
+    margin-bottom: 15px;
+}
+
+/* Основная сетка проектов */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 190px 190px 190px 300px 300px;
+    grid-template-rows: 300px 300px;
+    gap: 30px;
+}
+
+
+/* --------------------------------------------------
+   5.1. РАСПОЛОЖЕНИЕ СЕМИ КАРТОЧЕК
+   -------------------------------------------------- */
+
+/* Первая карточка — пейзаж */
+.project1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* Вторая карточка — портрет */
+.project2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* Третья карточка — предметная фотография */
+.project3 {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+/* Четвёртая карточка — "Семантический разбор" */
+.project4 {
+    grid-column: 4 / 6;
+    grid-row: 1;
+}
+
+/* Пятая карточка — "Забвение" */
+.project5 {
+    grid-column: 1 / 4;
+    grid-row: 2;
+}
+
+/* Шестая карточка — ретушь */
+.project6 {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+/* Седьмая карточка — портрет */
+.project7 {
+    grid-column: 5;
+    grid-row: 2;
+}
+
+
+/* --------------------------------------------------
+   5.2. МАЛЕНЬКИЕ КАРТОЧКИ ПРОЕКТОВ
+   -------------------------------------------------- */
+
+/* Общая настройка маленькой карточки */
+.project-card {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Область фотографии */
+.project-image {
+    height: 184px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+/* Фотография маленькой карточки */
+.project-image img {
+    width: 100%;
+    height: 184px;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+
+/* Чёрные плашки с хештегами */
+.project-tag {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    background-color: #202020;
+    color: white;
+    padding: 6px 14px;
+    font-size: 14px;
+}
+
+/* Описание проекта под фотографией */
+.project-card p {
+    margin-top: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+
+/* --------------------------------------------------
+   5.3. ДАТЫ И ЗНАЧКИ КАЛЕНДАРЯ
+   -------------------------------------------------- */
+
+/* Дата публикации */
+.project-date {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: #999999;
+}
+
+/* Расположение даты внизу маленькой карточки */
+.project-card .project-date {
+    margin-top: auto;
+}
+
+/* Иконка календаря */
+.project-date img {
+    display: block;
+    width: 14px;
+    height: 14px;
+}
+
+
+/* --------------------------------------------------
+   5.4. БОЛЬШИЕ КАРТОЧКИ ПРОЕКТОВ
+   -------------------------------------------------- */
+
+/* Общие настройки больших карточек */
+.project-big {
+    height: 300px;
+    padding: 30px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+/* Фотография "Семантический разбор" */
+.project4 {
+    background-image: url('images/project4.jpg');
+}
+
+/* Фотография "Забвение" */
+.project5 {
+    background-image: url('images/project5.jpg');
+}
+
+/* Текст внутри больших карточек */
+.project-info {
+    width: 290px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Белый цвет даты на больших фотографиях */
+.project-big .project-date {
+    color: white;
+}
+
+/* Заголовки "Семантический разбор" и "Забвение" */
+.project-info h3 {
+    font-family: 'TT Firs Neue', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    margin: 5px 0;
+}
+
+/* Описание под заголовками */
+.project-info p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+/* Переносы текста в "Семантическом разборе" */
+.project4 .project-info p {
+    white-space: nowrap;
+}
+
+
+/* --------------------------------------------------
+   5.5. КНОПКИ "О ПРОЕКТЕ"
+   -------------------------------------------------- */
+
+/* Кнопки на больших фотографиях */
+.project-btn {
+    color: white;
+    text-decoration: none;
+    border: 3px solid #FF6E30;
+    padding: 12px 18px;
+    font-size: 16px;
+    margin-top: auto;
+}
+
+/* Заливка кнопки при наведении */
+.project-btn:hover {
+    background-color: #FF6E30;
+}
+
+
+/* ==================================================
+   6. ЧЕТВЁРТЫЙ РАЗДЕЛ — КОНТАКТЫ
+   Яндекс Карта, адрес, телефон и форма заявки
+   ================================================== */
+
+/* Отступ снизу раздела */
+.contacts {
+    padding-bottom: 70px;
+}
+
+/* Заголовок "Контакты" */
+.contacts h2 {
+    font-family: 'TT Firs Neue', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 100%;
+    margin-bottom: 22px;
+}
+
+/* Две колонки: карта и форма */
+.contacts-grid {
+    display: grid;
+    grid-template-columns: 850px 410px;
+    gap: 30px;
+}
+
+
+/* --------------------------------------------------
+   6.1. ЯНДЕКС КАРТА
+   -------------------------------------------------- */
+
+/* Контейнер карты */
+.contacts-map {
+    width: 850px;
+    height: 460px;
+    position: relative;
+}
+
+/* Встроенная интерактивная карта */
+.contacts-map iframe {
+    display: block;
+    width: 850px;
+    height: 460px;
+    border: none;
+}
+
+
+/* --------------------------------------------------
+   6.2. ТЁМНАЯ ПАНЕЛЬ ПОВЕРХ КАРТЫ
+   -------------------------------------------------- */
+
+/* Панель с адресом */
+.map-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 410px;
+    height: 460px;
+    background-color: rgba(32, 32, 32, 0.85);
+    color: white;
+}
+
+/* Значок крестика */
+.map-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+/* Блок с адресом и телефоном */
+.map-text {
+    position: absolute;
+    left: 60px;
+    top: 176px;
+    width: 300px;
+}
+
+/* Надпись "Студия High pass" */
+.map-text h3 {
+    font-family: 'TT Firs Neue', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 22px;
+    margin-bottom: 5px;
+}
+
+/* Адрес фотостудии */
+.map-text p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #CACACA;
+}
+
+
+/* --------------------------------------------------
+   6.3. ТЕЛЕФОН СТУДИИ
+   -------------------------------------------------- */
+
+/* Номер телефона */
+.map-phone {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+
+    font-family: 'TT Firs Neue', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+
+    color: #FF6E30;
+    text-decoration: none;
+}
+
+/* Значок телефона */
+.map-phone img {
+    width: 22px;
+    height: 22px;
+}
+
+
+/* --------------------------------------------------
+   6.4. ФОРМА "ОСТАВИТЬ ЗАЯВКУ"
+   -------------------------------------------------- */
+
+/* Правая колонка с формой */
+.contacts-form {
+    width: 410px;
+}
+
+/* Заголовок "Оставить заявку" */
+.contacts-form h3 {
+    font-family: 'TT Firs Neue', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 22px;
+    margin-bottom: 5px;
+}
+
+/* Описание над формой */
+.contacts-form p {
+    font-size: 16px;
+    line-height: 22px;
+    color: #999999;
+    margin-bottom: 10px;
+}
+
+/* Поля формы расположены вертикально */
+.request-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Поля "Имя", "Email" и "Комментарий" */
+.request-form input,
+.request-form textarea {
+    width: 410px;
+    border: none;
+    background-color: #E9E9E9;
+    padding: 15px 23px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+/* Поля имени и Email */
+.request-form input {
+    height: 50px;
+}
+
+/* Большое поле комментария */
+.request-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+/* Кнопка отправки заявки */
+.request-form .btn {
+    width: 126px;
+    height: 50px;
+    align-self: flex-start;
+}
+
+
+/* ==================================================
+   7. ПЯТЫЙ РАЗДЕЛ — ПОДВАЛ САЙТА (FOOTER)
+   Логотип, цитата и социальные сети
+   ================================================== */
+
+/* Весь подвал */
+.footer {
+    background-color: #202020;
+    height: 106px;
+    display: flex;
+    align-items: center;
+}
+
+/* Контейнер с тремя колонками */
+.footer-content {
+    display: flex;
+    align-items: center;
+}
+
+
+/* --------------------------------------------------
+   7.1. ЛЕВАЯ ЧАСТЬ ПОДВАЛА
+   Логотип и подпись
+   -------------------------------------------------- */
+
+/* Левая колонка */
+.footer-left {
+    width: 440px;
+}
+
+/* Логотип в подвале */
+.footer-left img {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Надпись "Фотостудия High pass 2018–2020" */
+.footer-left p {
+    font-family: 'TT Firs Neue', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 100%;
+    color: #CACACA;
+}
+
+
+/* --------------------------------------------------
+   7.2. ЦЕНТРАЛЬНАЯ ЧАСТЬ ПОДВАЛА
+   Цитата Имоджен Каннингем
+   -------------------------------------------------- */
+
+/* Центральная колонка */
+.footer-center {
+    width: 690px;
+}
+
+/* Текст цитаты */
+.footer-center p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #CACACA;
+}
+
+
+/* --------------------------------------------------
+   7.3. ПРАВАЯ ЧАСТЬ ПОДВАЛА
+   Надпись и иконки социальных сетей
+   -------------------------------------------------- */
+
+/* Правая колонка */
+.footer-right {
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Надпись "Больше интересного:" */
+.footer-right p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #CACACA;
+    white-space: nowrap;
+}
+
+
+/* --------------------------------------------------
+   7.4. ИКОНКИ VK И ОДНОКЛАССНИКОВ
+   -------------------------------------------------- */
+
+/* Контейнер с двумя иконками */
+.social {
+    display: flex;
+    gap: 10px;
+}
+
+/* Ссылки социальных сетей */
+.social a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    color: #CACACA;
+    transition: color 0.3s;
+}
+
+/* Размеры SVG-иконок */
+.social-icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+/* Цвет иконок при наведении мышью */
+.social a:hover {
+    color: #FF6E30;
+}
+
+/* Оформление при выборе через клавишу Tab */
+.social a:focus-visible {
+    color: #BC572B;
+    outline: 2px solid #FF6E30;
+}
+
+/* Цвет иконок во время нажатия */
+.social a:active {
+    color: #CE4307;
+}
+
+
+
+/* =========================================
+   АДАПТИВ ДЛЯ ПЛАНШЕТОВ — 1024 PX
+   ========================================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+
+    /* =====================================
+       1. ОБЩИЕ НАСТРОЙКИ
+       ===================================== */
+
+    .container {
+        width: calc(100% - 64px);
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+
+    /* =====================================
+       2. ШАПКА
+       ===================================== */
+
+    .header {
+        height: 70px;
+    }
+
+    .header-content {
+        justify-content: space-between;
+    }
+
+    .logo {
+        width: 166px;
+        height: auto;
+    }
+
+    .menu {
+        gap: 30px;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+
+    .search-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+
+    /* =====================================
+       3. МАСТЕР-КЛАСС
+       ===================================== */
+
+    .intro {
+        margin: 40px 0;
+    }
+
+    .intro-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+    }
+
+    .intro-card {
+        width: 100%;
+        height: 626px;
+        padding: 30px;
+    }
+
+    .intro-text h1 {
+        font-size: 36px;
+    }
+
+    /* Правая галерея */
+
+    .intro-gallery {
+        width: 100%;
+        height: 626px;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: 48px 334px 186px;
+
+        column-gap: 30px;
+        row-gap: 29px;
+    }
+
+    .intro-gallery h2 {
+        grid-column: 1 / 3;
+
+        font-size: 24px;
+        line-height: 24px;
+
+        white-space: normal;
+    }
+
+    .intro-gallery .img-main {
+        grid-column: 1 / 3;
+
+        width: 100%;
+        height: 334px;
+    }
+
+    .intro-gallery img:not(.img-main) {
+        width: 100%;
+        height: 186px;
+    }
+
+
+    /* =====================================
+       4. О СТУДИИ
+       ===================================== */
+
+    .about {
+        height: auto;
+        min-height: 656px;
+        padding: 34px 0 40px;
+    }
+
+    .about-title {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .about-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+    }
+
+    .about-text p {
+        width: 100%;
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .about-right {
+        margin-top: -3px;
+    }
+
+    .about-right img {
+        width: 100%;
+        height: 332px;
+        margin-bottom: 20px;
+    }
+
+    .about-right h3 {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    /* Форма подписки */
+
+    .form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form input {
+        width: 100%;
+        height: 50px;
+    }
+
+    .form .btn {
+        width: 126px;
+        height: 50px;
+    }
+
+
+    /* =====================================
+   5. НАШИ ПРОЕКТЫ — TABLET 1024
+   ===================================== */
+
+/* Ширина контейнера как в Figma */
+.projects .container {
+    width: calc(100% - 62px);
+    max-width: 962px;
+}
+
+/* Заголовок */
+.projects h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Основная сетка */
+.projects-grid {
+    display: grid;
+
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-template-rows: 285px 307px 307px;
+
+    column-gap: 30px;
+    row-gap: 24px;
+}
+
+
+/* =====================================
+   РАСПОЛОЖЕНИЕ КАРТОЧЕК
+   ===================================== */
+
+/* Первая строка */
+
+.project1 {
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+
+.project2 {
+    grid-column: 3 / 5;
+    grid-row: 1;
+}
+
+.project3 {
+    grid-column: 5 / 9;
+    grid-row: 1;
+}
+
+
+/* Вторая строка */
+
+.project4 {
+    grid-column: 1 / 6;
+    grid-row: 2;
+}
+
+.project6 {
+    grid-column: 6 / 9;
+    grid-row: 2;
+}
+
+
+/* Третья строка */
+
+.project7 {
+    grid-column: 1 / 4;
+    grid-row: 3;
+}
+
+.project5 {
+    grid-column: 4 / 9;
+    grid-row: 3;
+}
+
+
+/* =====================================
+   МАЛЕНЬКИЕ КАРТОЧКИ
+   ===================================== */
+
+.project-card {
+    height: 307px;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Первые три карточки */
+
+.project1,
+.project2,
+.project3 {
+    height: 285px;
+}
+
+/* Фотографии */
+
+.project-image {
+    width: 100%;
+    height: 184px;
+
+    position: relative;
+    flex-shrink: 0;
+}
+
+.project-image img {
+    display: block;
+
+    width: 100%;
+    height: 184px;
+
+    object-fit: cover;
+}
+
+
+/* Третья карточка — фотография предметов */
+.project3 .project-image {
+    height: auto;
+}
+
+.project3 .project-image picture {
+    display: block;
+    width: 100%;
+}
+
+.project3 .project-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: unset;
+}
+
+/* Описание */
+
+.project-card p {
+    margin-top: 16px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+/* Даты */
+
+.project-card .project-date {
+    margin-top: auto;
+}
+
+
+/* =====================================
+   БОЛЬШИЕ КАРТОЧКИ
+   ===================================== */
+
+.project-big {
+    width: 100%;
+    height: 307px;
+
+    padding: 30px;
+
+    position: relative;
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+}
+
+/* Текст внутри больших карточек */
+
+.project-info {
+    width: 290px;
+    max-width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Заголовки */
+
+.project-info h3 {
+    font-family: 'TT Firs Neue', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+/* Описание */
+
+.project-info p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+/* Перенос текста в карточке 4 */
+
+.project4 .project-info p {
+    white-space: normal;
+}
+
+
+    /* =====================================
+       6. КОНТАКТЫ
+       ===================================== */
+
+    .contacts {
+        padding-bottom: 40px;
+    }
+
+    .contacts-grid {
+        grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    /* Карта */
+
+    .contacts-map {
+        width: 100%;
+        height: 460px;
+    }
+
+    .contacts-map iframe {
+        width: 100%;
+        height: 460px;
+    }
+
+    /* Панель с адресом */
+
+    .map-info {
+        top: auto;
+        bottom: 0;
+
+        width: 100%;
+        height: 156px;
+    }
+
+    .map-text {
+        top: 24px;
+        left: 32px;
+        width: calc(100% - 64px);
+    }
+
+    .map-text h3 {
+        font-size: 20px;
+    }
+
+    .map-text p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .map-phone {
+        font-size: 14px;
+    }
+
+
+    /* Форма контактов */
+
+    .contacts-form {
+        width: 100%;
+    }
+
+    .contacts-form h3 {
+        font-size: 20px;
+    }
+
+    .contacts-form p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .request-form {
+        gap: 20px;
+    }
+
+    .request-form input,
+    .request-form textarea {
+        width: 100%;
+    }
+
+
+    /* =====================================
+       7. ПОДВАЛ
+       ===================================== */
+
+    .footer {
+        height: 106px;
+    }
+
+    .footer-content {
+        justify-content: space-between;
+    }
+
+    .footer-left {
+        width: 34%;
+    }
+
+    .footer-center {
+        width: 48%;
+    }
+
+    .footer-right {
+        width: 18%;
+    }
+
+    .footer-left p,
+    .footer-center p,
+    .footer-right p {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .social a {
+        width: 24px;
+        height: 24px;
+    }
+
+    .social-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+
+    }
+
+
+    
+/* =========================================
+   АДАПТИВ ДЛЯ ПЛАНШЕТА — 768 PX
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    /* Общая ширина контейнера */
+    .container {
+        width: calc(100% - 52px);
+    }
+
+
+/* ---------- ШАПКА ---------- */
+
+.header {
+    width: 100%;
+    height: 125px;
+    background-color: #202020;
+    align-items: flex-start;
+}
+
+.header .container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0 26px;
+}
+
+.header-content {
+    width: 100%;
+    height: 80px;
+    position: relative;
+}
+
+/* Серая панель меню */
+nav {
+    position: absolute;
+    left: -26px;
+    right: -26px;
+    bottom: -45px;
+    height: 45px;
+    background-color: #4A4A4A;
+}
+
+/* Все пункты меню */
+.menu {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    padding: 0 26px;
+}
+
+/* Пункты меню */
+.menu li {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+/* Текст меню */
+.menu a {
+    font-size: 16px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+
+    /* ---------- ПЕРВЫЙ ЭКРАН ---------- */
+
+    .intro {
+        margin: 35px 0 65px;
+    }
+
+    .intro-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+    }
+
+    /* Большая фотография слева */
+    .intro-card {
+        width: 100%;
+        height: 453px;
+        padding: 28px;
+    }
+
+    .intro-text h1 {
+        font-size: 34px;
+    }
+
+    /* Галерея справа */
+    .intro-gallery {
+        width: 100%;
+        height: auto;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: 50px 228px 133px;
+        column-gap: 30px;
+        row-gap: 20px;
+    }
+
+    .intro-gallery h2 {
+        grid-column: 1 / 3;
+        font-size: 22px;
+        white-space: normal;
+    }
+
+    /* Большая фотография */
+    .intro-gallery .img-main {
+        grid-column: 1 / 3;
+        width: 100%;
+        height: 228px;
+    }
+
+    /* Две маленькие фотографии */
+    .intro-gallery img:not(.img-main) {
+        width: 100%;
+        height: 133px;
+    }
+
+/* =====================================
+   БЛОК О СТУДИИ — 768 PX
+   ===================================== */
+
+/* Внешние отступы и высота блока */
+.about {
+    height: auto;
+    min-height: 884px;
+    padding: 30px 0 40px;
+}
+
+/* Контейнер как в Figma */
+.about .container {
+    width: calc(100% - 54px);
+    max-width: none;
+}
+
+/* Две одинаковые колонки */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    align-items: start;
+}
+
+/* Заголовок */
+.about-title {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+/* Текст слева */
+.about-text p {
+    width: 100%;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+/* Правая колонка */
+.about-right {
+    width: 100%;
+    margin-top: -3px;
+}
+
+/* Фотография фотоаппарата */
+/* Фотография фотоаппарата */
+/* Фотография фотоаппарата для 768 px */
+.about-right picture {
+    display: block;
+    width: 100%;
+}
+
+.about-right img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 24px;
+}
+
+/* Заголовок рассылки */
+.about-right h3 {
+    font-size: 20px;
+    line-height: 22px;
+    margin-bottom: 16px;
+}
+
+/* Форма подписки */
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Поле Email */
+.form input {
+    width: 100%;
+    height: 50px;
+}
+
+/* Кнопка отправки */
+.form .btn {
+    width: 126px;
+    height: 50px;
+}
+
+
+
+/* =====================================
+   БЛОК НАШИ ПРОЕКТЫ — 768 PX
+   ===================================== */
+
+/* Ширина блока */
+.projects .container {
+    width: calc(100% - 54px);
+    max-width: 714px;
+}
+
+/* Заголовок */
+.projects h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Основная сетка */
+.projects-grid {
+    display: grid;
+
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-rows: 301px 306px 307px 300px;
+
+    column-gap: 30px;
+    row-gap: 24px;
+}
+
+/* =====================================
+   РАСПОЛОЖЕНИЕ КАРТОЧЕК
+   ===================================== */
+
+/* Первый ряд — три карточки */
+
+.project1 {
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+
+.project2 {
+    grid-column: 3 / 5;
+    grid-row: 1;
+}
+
+.project3 {
+    grid-column: 5 / 7;
+    grid-row: 1;
+}
+
+/* Второй ряд — большая карточка */
+
+.project4 {
+    grid-column: 1 / 7;
+    grid-row: 2;
+}
+
+/* Третий ряд — две карточки */
+
+.project6 {
+    grid-column: 1 / 4;
+    grid-row: 3;
+}
+
+.project7 {
+    grid-column: 4 / 7;
+    grid-row: 3;
+}
+
+/* Четвёртый ряд — большая карточка */
+
+.project5 {
+    grid-column: 1 / 7;
+    grid-row: 4;
+}
+
+/* =====================================
+   МАЛЕНЬКИЕ КАРТОЧКИ
+   ===================================== */
+
+.project-card {
+    width: 100%;
+    height: 300px;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Карточки третьего ряда */
+
+.project6,
+.project7 {
+    height: 307px;
+}
+
+/* Фотографии */
+
+.project-image {
+    width: 100%;
+    height: 184px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.project-image picture {
+    display: block;
+    width: 100%;
+    height: 184px;
+}
+
+.project-image img {
+    display: block;
+    width: 100%;
+    height: 184px;
+    object-fit: cover;
+}
+
+/* Описание */
+
+.project-card p {
+    margin-top: 10px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+/* Даты */
+
+.project-card .project-date {
+    margin-top: auto;
+}
+
+/* =====================================
+   БОЛЬШИЕ КАРТОЧКИ
+   ===================================== */
+
+.project-big {
+    width: 100%;
+    height: 300px;
+    padding: 30px;
+
+    position: relative;
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+}
+
+/* Текст внутри больших карточек */
+
+.project-info {
+    width: 290px;
+    max-width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Кнопки */
+
+.project-btn {
+    margin-top: auto;
+}
+
+
+
+
+/* Исправление фотографии третьей карточки для 768px */
+
+@media (max-width: 768px) {
+
+    .projects .project3 .project-image {
+        width: 100%;
+        height: 184px;
+        overflow: hidden;
+    }
+
+    .projects .project3 .project-image picture {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .projects .project3 .project-image img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+}
+
+
+/* =========================================
+   КОНТАКТЫ — АДАПТИВ 768 PX
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    /* Контейнер блока */
+    .contacts .container {
+        width: calc(100% - 54px);
+        max-width: none;
+        margin: 0 auto;
+    }
+
+    /* Расположение карты и формы друг под другом */
+    .contacts-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px 0;
+    }
+
+    /* Карта */
+    .contacts-map {
+        width: 100%;
+        height: 460px;
+        position: relative;
+    }
+
+    .contacts-map iframe {
+        display: block;
+        width: 100%;
+        height: 460px;
+    }
+
+    /* Тёмная панель с адресом */
+    .map-info {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 156px;
+    }
+
+    /* Текст внутри панели */
+    .map-text {
+        top: 24px;
+        left: 32px;
+        width: calc(100% - 64px);
+    }
+
+    .map-text h3 {
+        font-size: 20px;
+        line-height: 22px;
+    }
+
+    .map-text p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .map-phone {
+        font-size: 14px;
+    }
+
+    /* Форма заявки */
+    .contacts-form {
+        width: 466px;
+        max-width: 100%;
+    }
+
+    .contacts-form h3 {
+        font-size: 20px;
+        line-height: 22px;
+        margin-bottom: 5px;
+    }
+
+    .contacts-form p {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 10px;
+    }
+
+    /* Поля формы */
+    .request-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .request-form input,
+    .request-form textarea {
+        width: 100%;
+    }
+
+}
+
+
+
+
+/* =========================================
+   ФУТЕР — АДАПТИВ 768 PX
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    /* Весь футер */
+    .footer {
+        width: 100%;
+        height: 106px;
+        background-color: #202020;
+
+        display: flex;
+        align-items: center;
+    }
+
+    /* Контейнер футера */
+    .footer-content {
+        width: calc(100% - 54px);
+        max-width: none;
+        margin: 0 auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Логотип и подпись слева */
+    .footer-left {
+        width: 263px;
+        flex-shrink: 0;
+    }
+
+    .footer-left img {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .footer-left p {
+        font-size: 14px;
+        line-height: 100%;
+    }
+
+    /* Цитату скрываем */
+    .footer-center {
+        display: none;
+    }
+
+    /* Социальные сети справа */
+    .footer-right {
+        width: 160px;
+        height: 60px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    /* Надпись над иконками */
+    .footer-right p {
+        font-size: 16px;
+        line-height: 22px;
+        white-space: nowrap;
+    }
+
+    /* Иконки социальных сетей */
+    .social {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .social a {
+        width: 30px;
+        height: 30px;
+    }
+
+    .social-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+}
+
+
+/* =========================================
+   АДАПТИВ ДЛЯ МОБИЛЬНЫХ — 320 PX
+   ========================================= */
+
+@media (max-width: 767px) {
+
+    /* =====================================
+       1. ОБЩИЕ НАСТРОЙКИ
+       ===================================== */
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: calc(100% - 24px);
+        max-width: none;
+        margin: 0 auto;
+    }
+
+
+    /* =====================================
+       2. ШАПКА
+       ===================================== */
+
+    .header {
+        width: 100%;
+        height: 115px;
+        display: block;
+        background-color: #202020;
+    }
+
+    .header .container {
+        width: 100%;
+        padding: 0 12px;
+        margin: 0;
+    }
+
+    .header-content {
+        width: 100%;
+        height: 70px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Логотип */
+
+    .logo {
+        width: 105px;
+        height: auto;
+    }
+
+    /* Лупа */
+
+    .search-open img {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Серая панель меню */
+
+    nav {
+        position: absolute;
+        left: -12px;
+        right: -12px;
+        bottom: -45px;
+        height: 45px;
+        background-color: #4A4A4A;
+    }
+
+    /* Скрываем обычное меню */
+
+    .menu {
+        display: none;
+    }
+
+    /* Рисуем значок меню */
+
+    nav::before {
+        content: "";
+        position: absolute;
+        left: 12px;
+        top: 14px;
+        width: 20px;
+        height: 14px;
+
+        background: linear-gradient(
+            to bottom,
+            white 0px,
+            white 2px,
+            transparent 2px,
+            transparent 6px,
+            white 6px,
+            white 8px,
+            transparent 8px,
+            transparent 12px,
+            white 12px,
+            white 14px
+        );
+    }
+
+    /* Поиск пока без JavaScript */
+
+    .search-panel {
+        display: none !important;
+    }
+
+
+    /* =====================================
+       3. МАСТЕР-КЛАСС
+       ===================================== */
+
+    .intro {
+        margin: 18px 0 35px;
+    }
+
+    /* Все блоки друг под другом */
+
+    .intro-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    /* Большая фотография */
+
+    .intro-card {
+        width: 100%;
+        height: 400px;
+        padding: 16px;
+
+        background-size: cover;
+        background-position: center;
+    }
+
+    .tag {
+        top: 10px;
+        right: 10px;
+        width: 100px;
+        height: 24px;
+        font-size: 11px;
+    }
+
+    .intro-text p {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .intro-text h1 {
+        font-size: 25px;
+        line-height: 26px;
+        margin-bottom: 16px;
+    }
+
+    .intro-text .btn {
+        width: 140px;
+        height: 42px;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Галерея участников */
+
+    .intro-gallery {
+        width: 100%;
+        height: auto;
+
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto 180px 110px;
+
+        column-gap: 12px;
+        row-gap: 12px;
+    }
+
+    .intro-gallery h2 {
+        grid-column: 1 / 3;
+        font-size: 18px;
+        line-height: 20px;
+        white-space: normal;
+    }
+
+    .intro-gallery .img-main {
+        grid-column: 1 / 3;
+        width: 100%;
+        height: 180px;
+    }
+
+    .intro-gallery img:not(.img-main) {
+        width: 100%;
+        height: 110px;
+    }
+
+
+    /* =====================================
+       4. О СТУДИИ
+       ===================================== */
+
+    .about {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        padding: 22px 0 28px;
+    }
+
+    .about .container {
+        width: calc(100% - 24px);
+    }
+
+    .about-title {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    /* Текст и фотография в одну колонку */
+
+    .about-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about-text p {
+        width: 100%;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .about-right {
+        width: 100%;
+        margin: 0;
+    }
+
+    .about-right picture {
+        display: block;
+        width: 100%;
+    }
+
+    .about-right img {
+        display: block;
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        margin-bottom: 16px;
+    }
+
+    .about-right h3 {
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 12px;
+    }
+
+    /* Форма подписки */
+
+    .form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form input {
+        width: 100%;
+        height: 40px;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .form .btn {
+        width: 126px;
+        height: 42px;
+        padding: 10px;
+    }
+
+
+    /* =====================================
+       5. НАШИ ПРОЕКТЫ
+       ===================================== */
+
+    .projects {
+        padding: 30px 0;
+    }
+
+    .projects .container {
+        width: calc(100% - 24px);
+    }
+
+    .projects h2 {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    /* Все карточки располагаются вертикально */
+
+    .projects-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    /* Порядок карточек как в Figma */
+
+    .project1 {
+        order: 1;
+    }
+
+    .project2 {
+        order: 2;
+    }
+
+    .project3 {
+        order: 3;
+    }
+
+    .project4 {
+        order: 4;
+    }
+
+    .project6 {
+        order: 5;
+    }
+
+    .project7 {
+        order: 6;
+    }
+
+    .project5 {
+        order: 7;
+    }
+
+    /* Маленькие карточки */
+
+    .project-card {
+        width: 100%;
+        height: auto;
+        min-width: 0;
+    }
+
+    .project-image {
+        width: 100%;
+        height: 130px;
+        overflow: hidden;
+    }
+
+    .project-image picture {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .project-image img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Третья карточка */
+
+    .projects .project3 .project-image {
+        width: 100%;
+        height: 130px;
+    }
+
+    .projects .project3 .project-image picture {
+        width: 100%;
+        height: 100%;
+    }
+
+    .projects .project3 .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Описание проектов */
+
+    .project-card p {
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .project-card .project-date {
+        margin-top: 8px;
+    }
+
+    /* Большие карточки */
+
+    .project-big {
+        width: 100%;
+        height: 420px;
+        padding: 18px;
+
+        background-size: cover;
+        background-position: center;
+    }
+
+    .project-info {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+    }
+
+    .project-info h3 {
+        font-size: 23px;
+        line-height: 24px;
+    }
+
+    .project-info p {
+        font-size: 14px;
+        line-height: 18px;
+        white-space: normal;
+    }
+
+    .project-btn {
+        padding: 9px 14px;
+        font-size: 14px;
+        border-width: 2px;
+    }
+
+
+    /* =====================================
+       6. КОНТАКТЫ
+       ===================================== */
+
+    .contacts {
+        padding-bottom: 30px;
+    }
+
+    .contacts .container {
+        width: calc(100% - 24px);
+    }
+
+    .contacts h2 {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    /* Карта сверху, форма снизу */
+
+    .contacts-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .contacts-map {
+        width: 100%;
+        height: 240px;
+        position: relative;
+    }
+
+    .contacts-map iframe {
+        display: block;
+        width: 100%;
+        height: 240px;
+    }
+
+    /* Панель с адресом */
+
+    .map-info {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 145px;
+    }
+
+    .map-close {
+        top: 10px;
+        right: 10px;
+        width: 18px;
+        height: 18px;
+    }
+
+    .map-text {
+        top: 14px;
+        left: 14px;
+        width: calc(100% - 28px);
+    }
+
+    .map-text h3 {
+        font-size: 16px;
+        line-height: 18px;
+        margin-bottom: 5px;
+    }
+
+    .map-text p {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .map-phone {
+        font-size: 14px;
+        margin-top: 4px;
+        gap: 4px;
+    }
+
+    .map-phone img {
+        width: 16px;
+        height: 16px;
+    }
+
+    /* Форма заявки */
+
+    .contacts-form {
+        width: 100%;
+        max-width: none;
+    }
+
+    .contacts-form h3 {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .contacts-form p {
+        font-size: 13px;
+        line-height: 18px;
+        margin-bottom: 12px;
+    }
+
+    /* Убираем принудительные переносы */
+
+    .contacts-form p br {
+        display: none;
+    }
+
+    .request-form {
+        gap: 12px;
+    }
+
+    .request-form input,
+    .request-form textarea {
+        width: 100%;
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    .request-form input {
+        height: 40px;
+    }
+
+    .request-form textarea {
+        height: 90px;
+    }
+
+    .request-form .btn {
+        width: 126px;
+        height: 42px;
+    }
+
+
+    /* =====================================
+       7. ФУТЕР
+       ===================================== */
+
+    .footer {
+        width: 100%;
+        height: auto;
+        display: block;
+        background-color: #202020;
+    }
+
+    .footer-content {
+        width: 100%;
+        margin: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    /* Скрываем цитату */
+
+    .footer-center {
+        display: none;
+    }
+
+    /* Социальные сети сверху */
+
+    .footer-right {
+        order: 1;
+
+        width: 100%;
+        height: 95px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        background-color: #202020;
+    }
+
+    .footer-right p {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .social {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .social a {
+        width: 28px;
+        height: 28px;
+    }
+
+    .social-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Логотип снизу */
+
+    .footer-left {
+        order: 2;
+
+        width: 100%;
+        min-height: 65px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        padding: 12px;
+        background-color: #4A4A4A;
+    }
+
+    .footer-left img {
+        width: 105px;
+        height: auto;
+        margin-bottom: 4px;
+    }
+
+    .footer-left p {
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+}
+
+
+
+  
+
